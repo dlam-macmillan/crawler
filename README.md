@@ -6,8 +6,9 @@ Ruby
 Bundler
 
 # Install
-Copy project
-Run 'bundle install' in the directory
+Copy project then go to the directory and run
+
+    bundle install
 
 # Run
 Run the following in cmd
