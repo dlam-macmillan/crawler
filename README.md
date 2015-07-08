@@ -10,8 +10,10 @@ Copy project
 Run 'bundle install' in the directory
 
 # Run
-Run “ruby crawler.rb www.nature.com http://www.nature.com/openresearch nature” in cmd
+Run the following in cmd
 
+    ruby crawler.rb www.nature.com http://www.nature.com/openresearch nature
+    
 1st argument is the domain – crawler will only visit links that have this domain (I.e won’t bother checking links to other sites)
 
 2nd argument is starting point URL
