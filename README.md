@@ -1,4 +1,4 @@
-# crawler
+# Crawler
 A simple webpage crawler to detect broken links
 
 # Requirements
