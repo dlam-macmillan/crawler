@@ -13,7 +13,7 @@ Copy project then go to the directory and run
 # Run
 Run the following in cmd
 
-    ruby crawler.rb www.nature.com http://www.nature.com/openresearch nature
+    ruby crawler.rb http://www.nature.com http://www.nature.com/openresearch nature
     
 1st argument is the domain – crawler will only visit links that have this domain (I.e won’t bother checking links to other sites)
 
