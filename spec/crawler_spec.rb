@@ -51,9 +51,17 @@ describe "crawler" do
   end
 
   it "it reports the correct source and destination values in the results" do
-    # crawl 2 levels
-    # check each level has correct source and destination
-    # need levels with more than one child
+    start = Link.new('', 'http://localhost:8080/page-with-multiple-children.html')
+    crawler = Crawler.new(3)
+    crawler.crawl(start)
+
+    expect(crawler.csv.to_s.include?(',http://localhost:8080/page-with-multiple-children.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/page-with-multiple-children.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/level-two-child-a.html,http://localhost:8080/level-three-child-a-a.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/page-with-multiple-children.html,http://localhost:8080/level-two-child-b.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/level-two-child-b.html,http://localhost:8080/level-three-child-b-b.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/page-with-multiple-children.html,http://localhost:8080/level-two-child-c.html,')).to be(true)
+    expect(crawler.csv.to_s.include?('http://localhost:8080/level-two-child-c.html,http://localhost:8080/level-three-child-c-c.html,')).to be(true)
   end
 
   it "it stops following links in a closed look when it reaches the max depth level" do
